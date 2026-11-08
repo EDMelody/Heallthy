@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f7f6f2">
+  <title>伙伴体重记录</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="shell">
+    <header class="topbar">
+      <div><p class="eyebrow">DAILY WELLNESS LOG</p><h1>伙伴体重记录</h1><p class="sub">每天记录一点变化，稳稳向目标靠近。</p></div>
+      <span class="unit">单位：kg</span>
+    </header>
+    <section class="controls" aria-label="图表选项">
+      <label>查看对象<select id="person"></select></label>
+      <label>比较方式<select id="metric"><option value="both">早晚体重</option><option value="morning">仅早上</option><option value="evening">仅晚上</option><option value="change">早晚变化</option></select></label>
+    </section>
+    <section class="chart-card"><div class="section-heading"><div><p class="eyebrow">TREND</p><h2 id="chartTitle">体重趋势</h2></div><span class="legend" id="legend"></span></div><div class="chart-wrap"><svg id="chart" role="img" aria-label="体重趋势图" viewBox="0 0 760 300" preserveAspectRatio="none"></svg></div><p class="chart-note">虚线圆点表示插值估算；原始记录以实心圆点显示。</p></section>
+    <section class="summary" id="summary"></section>
+    <section class="records"><div class="section-heading"><div><p class="eyebrow">RECORDS</p><h2>每日记录</h2></div><span id="recordCount" class="muted"></span></div><div class="table-scroll"><table><thead><tr><th>日期</th><th>伙伴</th><th>早上</th><th>晚上</th><th>变化</th></tr></thead><tbody id="rows"></tbody></table></div></section>
+    <footer>记录用于个人趋势参考。缺失数据的插值只作趋势展示，不代表实际称重结果。</footer>
+  </main>
+  <script src="data.js"></script><script src="app.js"></script>
+</body>
+</html>

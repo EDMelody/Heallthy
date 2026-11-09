@@ -23,7 +23,7 @@
     const prevISO=prevDate?`${prevDate.getFullYear()}-${String(prevDate.getMonth()+1).padStart(2,'0')}-${String(prevDate.getDate()).padStart(2,'0')}`:null;
     const prevMorning=own.find(x=>x.date===prevISO)?.morning;
     const morningDelta=r?.morning!=null&&prevMorning!=null?(r.morning-prevMorning)/2:null;
-    document.querySelector('#today').innerHTML=`<article class="today-card" style="--accent:${colors[i%3]}"><div class="today-person"><span class="avatar">${p.slice(0,1)}</span><b>${p}</b><span class="today-record-date">${r?(isToday?'今日':'最近 · '+dateLabel(r.date)):'暂无记录'}</span></div><div class="today-values"><div><span>早上 · 斤</span><strong>${fmt(r?.morning)}</strong><small class="morning-delta ${morningDelta>0?'up':morningDelta<0?'down':''}">较昨日 ${morningDelta==null?'—':`${morningDelta>0?'+':''}${morningDelta.toFixed(1)} kg`}</small></div><div><span>晚上 · 斤</span><strong>${fmt(r?.evening)}</strong></div></div><div class="today-delta ${delta>0?'up':delta<0?'down':''}">${delta==null?'早晚差 —':`${isToday?'今日':'当日'}变化 ${delta>0?'+':''}${(delta/2).toFixed(1)} kg`}</div></article>`;
+    document.querySelector('#today').innerHTML=`<article class="today-card" style="--accent:${colors[i%3]}"><div class="today-person"><span class="avatar">${p.slice(0,1)}</span><b>${p}</b><span class="today-record-date">${r?(isToday?'今日':'最近 · '+dateLabel(r.date)):'暂无记录'}</span></div><div class="today-values"><div><span>早上</span><strong>${fmt(r?.morning)}</strong><small class="morning-delta ${morningDelta>0?'up':morningDelta<0?'down':''}">较昨日 ${morningDelta==null?'—':`${morningDelta>0?'+':''}${morningDelta.toFixed(1)} kg`}</small></div><div><span>晚上</span><strong>${fmt(r?.evening)}</strong></div></div><div class="today-delta ${delta>0?'up':delta<0?'down':''}">${delta==null?'早晚差 —':`${isToday?'今日':'当日'}变化 ${delta>0?'+':''}${(delta/2).toFixed(1)} kg`}</div></article>`;
   }
 
   function render(){
@@ -39,7 +39,7 @@
   function drawDetail(records){
     const selectedIndex=data.people.indexOf(selected), color=colors[selectedIndex%3], own=records.filter(r=>r.person===selected);
     const days=[];for(let n=9;n>=0;n--){const d=new Date(today);d.setDate(today.getDate()-n);days.push(`${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,'0')}-${String(d.getDate()).padStart(2,'0')}`);}
-    detail.innerHTML=`<div class="detail-chart-head"><b>${selected} · ${metric.options[metric.selectedIndex].text}趋势</b><span>${dateLabel(days[0])} — ${dateLabel(days[9])} · ${metric.value==='change'?'kg':'斤'}</span><span class="series-legend"><i></i>早上</span>${metric.value==='both'?'<span class="series-legend"><i class="evening-key"></i>晚上</span>':''}<span class="interpolation-key"><i></i>插值估算</span><span id="chartTip" class="chart-tip" aria-live="polite">点击折线查看数据</span></div><div class="detail-chart"><svg id="detailChart" role="img" aria-label="近10天体重趋势" viewBox="0 0 760 220" preserveAspectRatio="none"></svg></div>`;
+    detail.innerHTML=`<div class="detail-chart-head"><b>${selected} · ${metric.options[metric.selectedIndex].text}趋势</b><span>${dateLabel(days[0])} — ${dateLabel(days[9])}</span><span class="series-legend"><i></i>早上</span>${metric.value==='both'?'<span class="series-legend"><i class="evening-key"></i>晚上</span>':''}<span class="interpolation-key"><i></i>插值估算</span><span id="chartTip" class="chart-tip" aria-live="polite">点击折线查看数据</span></div><div class="detail-chart"><svg id="detailChart" role="img" aria-label="近10天体重趋势" viewBox="0 0 760 220" preserveAspectRatio="none"></svg></div>`;
     drawChart(own,days,color);
   }
 

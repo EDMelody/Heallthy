@@ -10,12 +10,12 @@
 <body>
   <main class="shell">
     <header class="topbar">
-      <div><p class="eyebrow">WELLNESS · DAILY LOG</p><h1>一起看见每一步</h1><p class="sub">伙伴体重记录 <span class="unit">体重：斤 · 差值：kg</span></p></div>
+      <div><p class="eyebrow">WELLNESS · DAILY LOG</p><h1>一起看见每一步</h1><p class="sub">伙伴体重记录 <span class="unit">差值：kg</span></p></div>
       <span class="date-chip">每日更新</span>
     </header>
     <nav class="person-tabs page-person-tabs" id="personTabs" aria-label="选择伙伴"></nav>
     <section class="today-section"><div class="today-title"><div><p class="eyebrow"><span id="todayLabel">TODAY</span> · <span id="todayDate"></span></p><h2 id="todayHeading">今日状态</h2></div><span class="today-badge" id="todayBadge">今日体重</span></div><div class="today-grid" id="today"></div></section>
-    <section class="records"><div class="section-heading"><div><p class="eyebrow">HISTORY</p><h2>记录总览</h2></div><span id="recordCount" class="muted"></span></div><div class="table-scroll"><table><thead><tr><th>日期</th><th>早上（斤）</th><th>晚上（斤）</th><th>差值（kg）</th></tr></thead><tbody id="rows"></tbody></table></div></section>
+    <section class="records"><div class="section-heading"><div><p class="eyebrow">HISTORY</p><h2>记录总览</h2></div><span id="recordCount" class="muted"></span></div><div class="table-scroll"><table><thead><tr><th>日期</th><th>早上</th><th>晚上</th><th>差值（kg）</th></tr></thead><tbody id="rows"></tbody></table></div></section>
     <section class="detail-section"><div class="intro-row"><div><p class="eyebrow">PERSONAL VIEW</p><h2>个人趋势</h2></div><label class="mode-control">趋势<select id="metric"><option value="both">早晚体重</option><option value="morning">仅早上</option><option value="evening">仅晚上</option><option value="change">早晚差值</option></select></label></div><article id="detail" class="detail-card"></article></section>
     <footer>虚线空心点为相邻记录插值估算；记录缺失时不会当作实测值展示。</footer>
   </main>

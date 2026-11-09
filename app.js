@@ -18,7 +18,12 @@
     document.querySelector('#todayLabel').textContent=hasToday?'TODAY':'LATEST';
     document.querySelector('#todayBadge').textContent=hasToday?'今日体重':'最近体重';
     const i=data.people.indexOf(selected),p=selected,own=records.filter(x=>x.person===p&&x.date<=todayISO),todays=own.find(x=>x.date===todayISO),hasTodayValue=todays&&(todays.morning!=null||todays.evening!=null),r=hasTodayValue?todays:own.filter(x=>x.date<todayISO&&(x.morning!=null||x.evening!=null)).at(-1),isToday=!!hasTodayValue,delta=r?.morning!=null&&r?.evening!=null?r.evening-r.morning:null;
-    document.querySelector('#today').innerHTML=`<article class="today-card" style="--accent:${colors[i%3]}"><div class="today-person"><span class="avatar">${p.slice(0,1)}</span><b>${p}</b><span class="today-record-date">${r?(isToday?'今日':'最近 · '+dateLabel(r.date)):'暂无记录'}</span></div><div class="today-values"><div><span>早上</span><strong>${fmt(r?.morning)}</strong></div><div><span>晚上</span><strong>${fmt(r?.evening)}</strong></div></div><div class="today-delta ${delta>0?'up':delta<0?'down':''}">${delta==null?'早晚差 —':`${isToday?'今日':'当日'}变化 ${delta>0?'+':''}${delta.toFixed(1)} kg`}</div></article>`;
+    const prevDate=r?new Date(`${r.date}T00:00:00`):null;
+    if(prevDate)prevDate.setDate(prevDate.getDate()-1);
+    const prevISO=prevDate?`${prevDate.getFullYear()}-${String(prevDate.getMonth()+1).padStart(2,'0')}-${String(prevDate.getDate()).padStart(2,'0')}`:null;
+    const prevMorning=own.find(x=>x.date===prevISO)?.morning;
+    const morningDelta=r?.morning!=null&&prevMorning!=null?r.morning-prevMorning:null;
+    document.querySelector('#today').innerHTML=`<article class="today-card" style="--accent:${colors[i%3]}"><div class="today-person"><span class="avatar">${p.slice(0,1)}</span><b>${p}</b><span class="today-record-date">${r?(isToday?'今日':'最近 · '+dateLabel(r.date)):'暂无记录'}</span></div><div class="today-values"><div><span>早上</span><strong>${fmt(r?.morning)}</strong><small class="morning-delta ${morningDelta>0?'up':morningDelta<0?'down':''}">较昨日 ${morningDelta==null?'—':`${morningDelta>0?'+':''}${morningDelta.toFixed(1)} kg`}</small></div><div><span>晚上</span><strong>${fmt(r?.evening)}</strong></div></div><div class="today-delta ${delta>0?'up':delta<0?'down':''}">${delta==null?'早晚差 —':`${isToday?'今日':'当日'}变化 ${delta>0?'+':''}${delta.toFixed(1)} kg`}</div></article>`;
   }
 
   function render(){

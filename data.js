@@ -4,9 +4,9 @@
 window.WEIGHT_DATA = {
   people: ["丢丢", "香香", "嘟宝"],
   records: [
-    { date: "2026-11-11", person: "丢丢", morning: 134.1, evening: null, receivedAt: "2026-11-11T16:35:10+08:00" },
-    { date: "2026-11-11", person: "香香", morning: 196.0, evening: null, receivedAt: "2026-11-11T16:35:10+08:00" },
-    { date: "2026-11-11", person: "嘟宝", morning: 105.2, evening: null, receivedAt: "2026-11-11T16:35:10+08:00" },
+    { date: "2026-11-11", person: "丢丢", morning: 134.1, evening: 142.2, receivedAt: "2026-11-11T16:35:10+08:00", eveningReceivedAt: "2026-11-11T22:27:46+08:00" },
+    { date: "2026-11-11", person: "香香", morning: 196.0, evening: 200.2, receivedAt: "2026-11-11T16:35:10+08:00", eveningReceivedAt: "2026-11-11T22:27:46+08:00" },
+    { date: "2026-11-11", person: "嘟宝", morning: 105.2, evening: 107.1, receivedAt: "2026-11-11T16:35:10+08:00", eveningReceivedAt: "2026-11-11T22:27:46+08:00" },
     { date: "2026-11-10", person: "丢丢", morning: 134.8, evening: 135.2, receivedAt: "2026-11-10T09:52:02+08:00", eveningReceivedAt: "2026-11-11T00:01:50+08:00" },
     { date: "2026-11-10", person: "香香", morning: 194.9, evening: 197.3, receivedAt: "2026-11-10T09:52:02+08:00", eveningReceivedAt: "2026-11-11T00:01:50+08:00" },
     { date: "2026-11-10", person: "嘟宝", morning: 105.6, evening: 107.2, receivedAt: "2026-11-10T09:52:02+08:00", eveningReceivedAt: "2026-11-11T00:01:50+08:00" },

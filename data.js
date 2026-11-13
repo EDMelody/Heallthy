@@ -4,12 +4,12 @@
 window.WEIGHT_DATA = {
   people: ["丢丢", "香香", "嘟宝"],
   records: [
-    { date: "2026-11-13", person: "丢丢", morning: 138.5, evening: null, receivedAt: "2026-11-13T00:41:30+08:00" },
-    { date: "2026-11-13", person: "香香", morning: 198.7, evening: null, receivedAt: "2026-11-13T00:41:30+08:00" },
-    { date: "2026-11-13", person: "嘟宝", morning: 107.4, evening: null, receivedAt: "2026-11-13T00:41:30+08:00" },
-    { date: "2026-11-12", person: "丢丢", morning: 134.7, evening: null, receivedAt: "2026-11-12T16:37:37+08:00" },
-    { date: "2026-11-12", person: "香香", morning: 196.7, evening: null, receivedAt: "2026-11-12T16:37:37+08:00" },
-    { date: "2026-11-12", person: "嘟宝", morning: 105.0, evening: null, receivedAt: "2026-11-12T16:37:37+08:00" },
+    { date: "2026-11-13", person: "丢丢", morning: 136.7, evening: 136.9, receivedAt: "2026-11-14T00:08:14+08:00", eveningReceivedAt: "2026-11-14T00:08:14+08:00", correctedAt: "2026-11-14T00:08:14+08:00" },
+    { date: "2026-11-13", person: "香香", morning: 195.9, evening: 198.8, receivedAt: "2026-11-14T00:08:14+08:00", eveningReceivedAt: "2026-11-14T00:08:14+08:00", correctedAt: "2026-11-14T00:08:14+08:00" },
+    { date: "2026-11-13", person: "嘟宝", morning: 106.9, evening: 108.2, receivedAt: "2026-11-14T00:08:14+08:00", eveningReceivedAt: "2026-11-14T00:08:14+08:00", correctedAt: "2026-11-14T00:08:14+08:00" },
+    { date: "2026-11-12", person: "丢丢", morning: 134.7, evening: 138.5, receivedAt: "2026-11-12T16:37:37+08:00", eveningReceivedAt: "2026-11-13T00:41:30+08:00" },
+    { date: "2026-11-12", person: "香香", morning: 196.7, evening: 198.7, receivedAt: "2026-11-12T16:37:37+08:00", eveningReceivedAt: "2026-11-13T00:41:30+08:00" },
+    { date: "2026-11-12", person: "嘟宝", morning: 105.0, evening: 107.4, receivedAt: "2026-11-12T16:37:37+08:00", eveningReceivedAt: "2026-11-13T00:41:30+08:00" },
     { date: "2026-11-11", person: "丢丢", morning: 134.1, evening: 136.2, receivedAt: "2026-11-11T16:35:10+08:00", eveningReceivedAt: "2026-11-11T22:27:46+08:00", eveningCorrectedAt: "2026-11-11T22:56:28+08:00" },
     { date: "2026-11-11", person: "香香", morning: 196.0, evening: 199.4, receivedAt: "2026-11-11T16:35:10+08:00", eveningReceivedAt: "2026-11-11T22:27:46+08:00", eveningCorrectedAt: "2026-11-11T23:50:42+08:00" },
     { date: "2026-11-11", person: "嘟宝", morning: 105.2, evening: 107.1, receivedAt: "2026-11-11T16:35:10+08:00", eveningReceivedAt: "2026-11-11T22:27:46+08:00" },

@@ -4,6 +4,9 @@
 window.WEIGHT_DATA = {
   people: ["丢丢", "香香", "嘟宝"],
   records: [
+    { date: "2026-11-15", person: "丢丢", morning: 136.4, evening: null, receivedAt: "2026-11-15T23:43:31+08:00" },
+    { date: "2026-11-15", person: "香香", morning: 198.6, evening: null, receivedAt: "2026-11-15T23:43:31+08:00" },
+    { date: "2026-11-15", person: "嘟宝", morning: 105.0, evening: null, receivedAt: "2026-11-15T23:43:31+08:00" },
     { date: "2026-11-14", person: "丢丢", morning: 136.2, evening: 137.9, receivedAt: "2026-11-14T22:25:43+08:00", eveningReceivedAt: "2026-11-14T22:25:43+08:00" },
     { date: "2026-11-14", person: "香香", morning: 196.8, evening: 201.2, receivedAt: "2026-11-14T22:25:43+08:00", eveningReceivedAt: "2026-11-14T22:25:43+08:00" },
     { date: "2026-11-14", person: "嘟宝", morning: 105.9, evening: 107.3, receivedAt: "2026-11-14T22:25:43+08:00", eveningReceivedAt: "2026-11-14T22:25:43+08:00" },
